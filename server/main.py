@@ -21,6 +21,10 @@ def get_other_mesh_suggestion(params):
     #     MetaMap = MetaMap_MeSH_Suggestion(params)
     #     return MetaMap.suggest()
 
+@app.route("/api", methods=['GET'])
+def get_api():
+    return 'Hello'
+
 
 @app.route("/api/v1/resources/mesh", methods=['GET'])
 def get_mesh():
