@@ -53,8 +53,8 @@ function App() {
         // const uri = 'http://127.0.0.1:5000/api/v1/resources/mesh?term=' + term + '&type=' + type;
         //const uri = 'http://localhost:5000/api/v1/resources/mesh?term=' + term + '&type=' + type;
         // const uri = 'http://13.236.91.254:5000/api/v1/resources/mesh?term=' + term + '&type=' + type;
-        const uri = 'http://' + LOCAL_IP + ':5000/api/v1/resources/mesh?term=' + term + '&type=' + type;
-        
+        const uri = 'https://' + LOCAL_IP + '/api/v1/resources/mesh?term=' + term + '&type=' + type;
+
         try {
             const response = await fetch(uri, {
                 method: "GET",

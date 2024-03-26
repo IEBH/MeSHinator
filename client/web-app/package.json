@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "REACT_APP_LOCAL_IP=$(curl -s ifconfig.me) react-scripts start",
+    "start": "REACT_APP_LOCAL_IP=ba92-103-96-6-111.ngrok-free.app react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
