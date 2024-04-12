@@ -223,7 +223,7 @@ def keyword_suggestion_method(keyword, model, tokenizer, retriever, look_up):
         return_tensors='pt'
     )
     encoded = model(query_tokenised)
-    uids = search_queries(retriever, encoded.q_reps.detach().numpy(), look_up, 10)
+    uids = search_queries(retriever, encoded.q_reps.detach().numpy(), look_up, 30)
     return uids[0]
 
 
@@ -243,9 +243,9 @@ def semantic_suggestion_method(keywords, model, tokenizer, retriever, look_up):
         )
         encoded.append(model(query_tokenised).q_reps.detach().numpy())
     if len(encoded) > 1:
-        uids = [search_queries_multiple(retriever, encoded, look_up, 10)]
+        uids = [search_queries_multiple(retriever, encoded, look_up, 30)]
     else:
-        uids = search_queries(retriever, encoded[0], look_up, 10)
+        uids = search_queries(retriever, encoded[0], look_up, 30)
 
     return uids[0]
 
@@ -266,7 +266,7 @@ def fragment_suggestion_method(keywords, model, tokenizer, retriever, look_up):
         )
         encoded.append(model(query_tokenised).q_reps.detach().numpy())
 
-    uids = [search_queries_multiple(retriever, encoded, look_up, 10)]
+    uids = [search_queries_multiple(retriever, encoded, look_up, 30)]
     return uids[0]
 
 
